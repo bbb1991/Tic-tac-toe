@@ -5,7 +5,7 @@ import java.io.IOException;
  * @author Bagdat Bimaganbetov
  * @author bagdat.bimaganbetov@gmail.com
  *
- * @version 0.2
+ * @version 0.3
  *
  */
 

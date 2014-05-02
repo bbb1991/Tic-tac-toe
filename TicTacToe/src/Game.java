@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 public class Game {
     private static int difficulty = 0;
     private static boolean isPlayerMove;
+    private static int playerWins = 0;
+    private static int computerWins = 0;
 
     public void startGame() throws IOException {
 
@@ -58,11 +60,22 @@ public class Game {
                 System.out.println("Вы проиграли.");
             }
 
+            winnerCount(Check.check());
+
             System.out.println("\n~~~~~~~~\nЗаново? y 1- Да");
         } while(reader.readLine().equals("y"));
 
         System.out.println("Спасибо за игру!");
         System.out.print("Создатель: Багдат Бимаганбетов. 2014");
+    }
+
+    private void winnerCount(char winner) {
+        if (winner == Field.getPlayerSymbol()) {
+            playerWins++;
+        } else if (winner == Field.getComputerSymbol()) {
+            computerWins++;
+        }
+        System.out.println("Счет игры: " + playerWins +":" + computerWins);
     }
 
 
